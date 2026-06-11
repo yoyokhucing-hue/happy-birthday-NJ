@@ -1,0 +1,241 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+width:100%;
+height:100vh;
+overflow:hidden;
+display:flex;
+justify-content:center;
+align-items:flex-end;
+
+background:
+linear-gradient(
+to bottom,
+#020111,
+#0d1b4c,
+#1f3c88
+);
+}
+
+.text{
+position:absolute;
+top:40px;
+color:#ffd700;
+font-size:45px;
+font-family:cursive;
+
+text-shadow:
+0 0 10px #ffd700,
+0 0 30px #ffd700,
+0 0 60px #ffd700;
+}
+
+.garden{
+display:flex;
+gap:80px;
+margin-bottom:30px;
+}
+
+.flower{
+position:relative;
+width:120px;
+height:400px;
+
+transform-origin:bottom;
+
+animation:
+grow 3s ease forwards,
+sway 4s ease-in-out infinite;
+}
+
+.stem{
+position:absolute;
+bottom:0;
+left:50%;
+
+width:10px;
+height:280px;
+
+transform:translateX(-50%);
+
+background:#14ff72;
+
+box-shadow:
+0 0 10px #14ff72,
+0 0 30px #14ff72;
+}
+
+.head{
+position:absolute;
+top:50px;
+left:50%;
+transform:translateX(-50%);
+width:120px;
+height:120px;
+}
+
+.petal{
+position:absolute;
+
+width:55px;
+height:55px;
+
+background:#ffd93d;
+
+border-radius:50%;
+
+box-shadow:
+0 0 15px #ffd93d,
+0 0 30px #ffd93d,
+0 0 60px #ffd93d;
+}
+
+.p1{
+top:0;
+left:32px;
+}
+
+.p2{
+top:30px;
+left:0;
+}
+
+.p3{
+top:30px;
+right:0;
+}
+
+.p4{
+bottom:0;
+left:32px;
+}
+
+.p5{
+top:65px;
+left:5px;
+}
+
+.p6{
+top:65px;
+right:5px;
+}
+
+.center{
+position:absolute;
+
+top:35px;
+left:35px;
+
+width:50px;
+height:50px;
+
+border-radius:50%;
+
+background:#ff7b00;
+
+box-shadow:
+0 0 15px orange,
+0 0 40px orange;
+}
+
+.flower1{
+animation-delay:.2s;
+}
+
+.flower2{
+animation-delay:.6s;
+}
+
+.flower3{
+animation-delay:1s;
+}
+
+@keyframes grow{
+from{
+transform:scaleY(0);
+}
+to{
+transform:scaleY(1);
+}
+}
+
+@keyframes sway{
+0%{
+rotate:-3deg;
+}
+50%{
+rotate:3deg;
+}
+100%{
+rotate:-3deg;
+}
+}
+.photo-star{
+    position:fixed;
+
+    width:55px;
+    height:55px;
+
+    object-fit:cover;
+    border-radius:50%;
+
+    opacity:.3;
+
+    z-index:-5;
+
+    box-shadow:
+        0 0 5px white,
+        0 0 15px pink;
+
+    animation:
+        twinkle 3s infinite,
+        floating 6s ease-in-out infinite;
+}
+
+/* Efek kedap-kedip */
+@keyframes twinkle{
+
+    0%{
+        opacity:.1;
+        transform:scale(.8);
+    }
+
+    50%{
+        opacity:.8;
+        transform:scale(1);
+    }
+
+    100%{
+        opacity:.1;
+        transform:scale(.8);
+    }
+}
+
+/* Efek melayang */
+@keyframes floating{
+
+    0%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-20px);
+    }
+
+    100%{
+        transform:translateY(0px);
+    }
+}
+.text{
+    z-index:100;
+    position:absolute;
+}
+
+.garden{
+    position:relative;
+    z-index:100;
+}
